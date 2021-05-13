@@ -4,26 +4,29 @@ import {useHistory} from 'react-router-dom'
 
 const AuthForm = ({heading, buttonText, signUp, onAuth,errors,removeError}) => {
     const history = useHistory()
+    
     const [authState, setAuthState] = useState({
         email: '',
         username:'',
         password:'',
         profileImageUrl:''
     })
-
+   
     const {email, username, password, profileImageUrl} = authState
     const onChangeAuth = e => setAuthState({...authState ,[e.target.name]: e.target.value})
     const handleSubmit = async e => {
         e.preventDefault();
         const authType = signUp ? 'signup' : 'signin';
         try {
-            await onAuth(authType, authState);
-            history.push('/')
-        } catch (error) {
+          const data = await onAuth(authType, authState);
+           if(data){
+               history.push('/')
+           }
             
+        } catch (err) {
+            return err;
         }
-      
-        
+       
 
     }
     history.listen(() => {

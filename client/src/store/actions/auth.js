@@ -30,6 +30,7 @@ export const authUser =  (type, userData) => {
                 setAuthorizationToken(token)
                 dispatch(setCurrenUser(user));
                 dispatch(removeError())
+                return data;
             }else{
                 dispatch(addError(data.message))
             }

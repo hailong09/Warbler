@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #e6ecf0!important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navButton{
+  color: #fff!important;
+}
+
+.navButton:hover{
+  color:  rgba(255,255,255,.55)!important;
+}
+
+
+.home-hero{
+  width: 100vw;
+  height: 100vh;
+  position:absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  text-align: center;
+  padding: 1rem;
+  background-image: url('./images/signed-out-home.jpg');
+  background-position: center center;
+  background-size: cover;
+  color: white;
+  text-shadow: 0 0 8px #66757f;
+}
+
+#messages .list-group-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 7px 20px 12px;
+  
+
+}
+.no-hover{
+  pointer-events:none;
+}
+
+#messages:not(.no-hover) .list-group-item:hover{
+  background-color: #e6ecf0 ;
+}
+/* not((disabled):hover) */
+
+.timeline-image{
+  border-radius: 50px;
+  height: 48px;
+  width: 48px;
+  margin: 2px 30px 10px 10px;
+}
+
+.btn:hover{
+  cursor: pointer;
+}
+
+.delete_btn,
+.delete_btn:hover
+{
+  color: white;
+}
+
+.message-area > a {
+  text-decoration: none;
+}
